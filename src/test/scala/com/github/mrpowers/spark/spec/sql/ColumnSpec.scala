@@ -320,4 +320,43 @@ class ColumnSpec extends FunSpec with DataFrameSuiteBase {
 
     }
   }
+
+  describe("#multiply2") {
+
+    it("Multiplication of this expression and another expression.") {
+
+      val sourceDf = Seq(
+        (7),
+        (14),
+        (23),
+        (41)
+      ).toDF("num1")
+
+      val actualDf = sourceDf.select(
+        sourceDf.col("num1"),
+        sourceDf.col("num1").multiply(0).as("num2")
+      )
+
+      val expectedData = List(
+        Row(7, 0),
+        Row(14, 0),
+        Row(23, 0),
+        Row(41, 0)
+      )
+
+      val expectedSchema = List(
+        StructField("num1", IntegerType, false),
+        StructField("num2", IntegerType, false)
+      )
+
+      val expectedDf = spark.createDataFrame(
+        spark.sparkContext.parallelize(expectedData),
+        StructType(expectedSchema)
+      )
+
+      assertDataFrameEquals(actualDf, expectedDf)
+
+    }
+
+  }
 }
