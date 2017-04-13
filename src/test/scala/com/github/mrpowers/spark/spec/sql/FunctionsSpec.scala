@@ -52,7 +52,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         StructType(expectedSchema)
       )
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -97,7 +97,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         StructType(expectedSchema)
       )
 
-      assertSmallDataFrameEquality(actualDf, expectedDf)
+      assertDataFrameEquality(actualDf, expectedDf)
 
     }
 
@@ -125,7 +125,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         .withColumn("birth_date", col("birth_date").cast("timestamp"))
         .withColumn("future_date", col("future_date").cast("date"))
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -183,7 +183,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         StructType(expectedSchema)
       )
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -229,7 +229,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         StructType(expectedSchema)
       )
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -271,7 +271,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         StructType(expectedSchema)
       )
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -313,7 +313,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         StructType(expectedSchema)
       )
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -391,7 +391,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         StructType(expectedSchema)
       )
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -425,7 +425,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         (null, null, null)
       ).toDF("word1", "word2", "yummy")
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -487,7 +487,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         StructType(expectedSchema)
       )
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -521,7 +521,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         (null, null, null)
       ).toDF("word1", "word2", "yummy")
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -572,7 +572,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         StructType(expectedSchema)
       )
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -616,7 +616,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         StructType(expectedSchema)
       )
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -668,7 +668,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         .withColumn("birth_date", col("birth_date").cast("timestamp"))
         .withColumn("future_date", col("future_date").cast("date"))
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -750,7 +750,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         StructType(expectedSchema)
       )
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
     }
 
   }
@@ -787,7 +787,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         ("B", "c", Seq(5, 6, 7))
       ).toDF("id", "class", "num")
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -838,7 +838,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
 
       val actualDF = inputDF.withColumn("result", factorial(col("number")))
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -918,7 +918,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         ("spider man", "Spider Man")
       ).toDF("no_upper_words", "first_upper")
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -958,7 +958,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         ("football", false)
       ).toDF("word", "nullCheck")
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
     }
 
   }
@@ -1019,7 +1019,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
 
       val actualDF = wordsDF.withColumn("length", length(col("word")))
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -1059,7 +1059,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         StructType(expectedSchema)
       )
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -1099,7 +1099,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         ("pikachu", "pikachu")
       ).toDF("word", "lower_word")
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -1161,7 +1161,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         StructType(expectedSchema)
       ).withColumn("birth_date", col("birth_date").cast("timestamp"))
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -1243,7 +1243,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         StructType(expectedSchema)
       )
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -1317,7 +1317,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         ("c", "cxxxx")
       ).toDF("word1", "rpad_column")
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -1415,7 +1415,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         StructType(expectedSchema)
       )
 
-      assertSmallDataFrameEquality(sqrtDF, expectedDF)
+      assertDataFrameEquality(sqrtDF, expectedDF)
 
     }
 
@@ -1442,8 +1442,8 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
   }
 
   describe("#substring") {
-
-    it("Slices a string, starts at position pos of length len.") {
+    
+     it("Slices a string, starts at position pos of length len.") {
 
       val wordsDF = Seq(
         ("Batman"),
@@ -1451,7 +1451,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         ("pikachu")
       ).toDF("word")
 
-      val actualDF = wordsDF.withColumn("substring_word", substring(col("word"), 0, 3))
+      val actualDF = wordsDF.withColumn("substring_word", substring(col("word"), 0,3))
 
       val expectedDF = Seq(
         ("Batman", "Bat"),
@@ -1462,7 +1462,8 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
       assertDataFrameEquality(actualDF, expectedDF)
 
     }
-
+    
+    
   }
 
   describe("#sum") {
@@ -1513,7 +1514,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         ("  cat", "cat")
       ).toDF("word", "short_word")
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -1557,7 +1558,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         ("piKachu", "PIKACHU")
       ).toDF("word", "upper_word")
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -1615,7 +1616,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         StructType(expectedSchema)
       ).withColumn("birth_date", col("birth_date").cast("timestamp"))
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
@@ -1645,7 +1646,7 @@ class FunctionsSpec extends FunSpec with SparkSessionTestWrapper with DataFrameC
         StructType(expectedSchema)
       ).withColumn("birth_date", col("birth_date").cast("date"))
 
-      assertSmallDataFrameEquality(actualDF, expectedDF)
+      assertDataFrameEquality(actualDF, expectedDF)
 
     }
 
